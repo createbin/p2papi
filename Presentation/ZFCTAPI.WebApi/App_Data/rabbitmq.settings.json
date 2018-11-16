@@ -1,0 +1,26 @@
+﻿{
+  "RabbitMQ": {
+    "Connection": {
+      "IP": "192.168.1.243",
+      "UserName": "donghao",
+      "PassWord": "123456"
+    },
+    "Producers": [
+      {
+        "Exchange": "",
+        "RouteKey": "Admin.BoHai",
+        "SendType": "SYS_Interface_Info"
+      },
+      {
+        "Exchange": "",
+        "RouteKey": "Admin.Interface",
+        "SendType": "InterfaceRequestLog"
+      },
+      {
+        "Exchange": "",
+        "RouteKey": "User.Login",
+        "SendType": "LoginLogInfo"
+      }
+    ]
+  }
+}

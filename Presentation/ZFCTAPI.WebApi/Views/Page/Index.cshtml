@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+@*<form action="/AsyncRecieve/FileNotice"  enctype="multipart/form-data">
+    <input type="text" value="" name="fileName">
+    <input type="file" id="file" name="files" multiple />
+    <input type="submit"  id="upload" value="Upload Selected Files" />
+</form>*@
+    
+<form method="post" enctype="multipart/form-data" action="/AsyncRecieve/FileNotice">
+    <div>
+        <input type="text" value="" name="fileName">
+        <p>Upload one or more files using this form:</p>
+        <input type="file" name="file"/>
+    </div>
+    <div>
+        <input type="submit" value="Upload" />
+    </div>
+</form>
+</body>
+</html>

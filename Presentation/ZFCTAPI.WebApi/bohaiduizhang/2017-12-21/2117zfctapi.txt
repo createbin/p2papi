@@ -1,0 +1,59 @@
+//累计交易金额
+select SUM(pro_credit_money) from PRO_invest_info where pro_transfer_id is null and pro_delsign=0
+//为投资人赚取的收益
+select SUM(pro_collect_rate+pro_collect_over_rate) from PRO_invester_plan where pro_invest_id>0
+//注册用户数
+select COUNT(a.Id) from CST_user_info a
+inner join Customer b
+on a.cst_customer_id=b.Id
+where b.IsAdminAccount=0
+
+
+//投资中
+select b.pro_loan_use as LoanName,
+b.Id as LoanId,a.Id as InvestId,
+b.pro_loan_rate as LoanRate,
+a.pro_invest_money as InvestMoney,
+a.pro_invest_date as InvestDate,
+b.pro_loan_state as LoanState
+from PRO_invest_info a 
+inner join PRO_loan_info b
+on a.pro_loan_id=b.Id
+where b.pro_loan_state in(20,21,23) and a.pro_delsign=0 and a.pro_invest_emp=3
+order by a.pro_invest_date desc
+
+//还款中
+select c.pro_loan_use as LoanName,
+c.Id as LoanId,b.Id as InvestId,
+c.pro_loan_rate as LoanRate,
+b.pro_invest_money as InvestMoney,
+b.pro_invest_date as InvestDate,
+c.pro_loan_state as LoanState,
+c.pro_loan_money as LoanMoney,
+a.pro_pay_date as NextPayDate
+from PRO_invester_plan a
+inner join PRO_invest_info b
+on a.pro_invest_id=b.Id
+inner join PRO_loan_info c
+on b.pro_loan_id=c.Id
+where c.pro_loan_state in(24,734) and a.pro_is_clear=0 and b.pro_invest_emp=3
+
+//已结清
+select a.Id as InvestId,
+b.Id as LoanId,
+b.pro_loan_use as LoanName,
+b.pro_loan_money as LoanMoney,
+b.pro_loan_rate as LoanRate,
+a.pro_invest_money as InvestMoney,
+c.pro_pay_date as ClearedDate
+from PRO_invest_info a
+inner join  PRO_loan_plan c
+on a.pro_loan_id=c.pro_loan_id
+inner join PRO_loan_info b
+on c.pro_loan_id=b.Id
+where ((b.pro_loan_period=c.pro_loan_period and c.pro_pay_type=156) or b.pro_loan_state=25)
+and a.pro_invest_emp=2451 and a.pro_delsign=0 and is_invest_succ=1
+
+
+
+

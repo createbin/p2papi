@@ -1,0 +1,12 @@
+﻿@{
+    Layout = null;
+}
+@model System.Collections.Generic.Dictionary<string,string>
+<body onload="document.postbh.submit()">
+    <form name="postbh" method="post" action="http://221.239.93.141:9080/bhdep/hipos/payTransaction" accept-charset="GBK">
+        @foreach (var item in Model)
+        {
+            <input name="@item.Key" type="hidden" value="@item.Value" />
+        }
+    </form>
+</body>

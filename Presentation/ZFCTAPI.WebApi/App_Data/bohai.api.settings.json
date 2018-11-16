@@ -1,0 +1,90 @@
+﻿{
+  "CoInfo": {
+    "Name": "渤海银行",
+    "Desc": "接口配置文件",
+    "Code": "BoHaiApi",
+    "MerId": "800080290000001", //商户号
+    "ConsumerId": "3201021", //清算系统分配给互金平台的系统编码
+    //"ConsumerId": "3201103", //清算系统分配给互金平台的系统编码
+    "InstId": "800025000010003", //银行分配给平台或者结算系统的唯一标识ode
+    "Url": "http://180.96.49.211:58081/",
+    "ApiAddress": "http://180.96.49.211:58081/",
+    "BoHaiAddress": "http://221.239.93.141:9080/bhdep/hipos/payTransaction",
+    "MerchantControlAddress": "http://192.168.1.238:8050/api/",
+    "BoHaiMobileAddress": "http://mtest.cbhb.com.cn/pmobile227/static/index.html", //渤海手机端页面
+    "Interfaces": [
+      {
+        "Name": "UserAdd",
+        "ActionUrl": "p_UserAdd",
+        "IsHtml": "False",
+        "Desc": "用户新增"
+      },
+      {
+        "Name": "RealNameWeb",
+        "ActionUrl": "p_RealNameWeb",
+        "IsHtml": "True",
+        "Desc": "用户注册绑卡"
+      },
+      {
+        "Name": "AccountQueryAccBalance",
+        "ActionUrl": "p_AccountQueryAccBalance",
+        "IsHtml": "False",
+        "Desc": "余额查询"
+      },
+      {
+        "Name": "p_WebRecharge",
+        "ActionUrl": "WebRecharge",
+        "IsHtml": "True",
+        "Desc": "充值"
+      },
+      {
+        "Name": "Drawings",
+        "ActionUrl": "p_Drawings",
+        "IsHtml": "True",
+        "Desc": "提现"
+      },
+      {
+        "Name": "PayBackRecharge",
+        "ActionUrl": "p_PayBackRecharge",
+        "IsHtml": "False",
+        "Desc": "还款充值"
+      },
+      {
+        "Name": "SubmitCreditProject",
+        "ActionUrl": "p_submitCreditProject",
+        "IsHtml": "False",
+        "Desc": "新增修改项目"
+      },
+      {
+        "Name": "ClaimsPurchase",
+        "ActionUrl": "p_claimsPurchase",
+        "IsHtml": "False",
+        "Desc": "申购"
+      },
+      {
+        "Name": "ClaimsTransferDeal",
+        "ActionUrl": "p_claimsTransferDeal",
+        "IsHtml": "False",
+        "Desc": "转让成交"
+      },
+      {
+        "Name": "MerchantControlRaiseLoan",
+        "ActionUrl": "DataTransform/RaiseLoan",
+        "IsHtml": "False",
+        "Desc": "商户控制台满标数据传输"
+      },
+      {
+        "Name": "MerchantControlRepayment",
+        "ActionUrl": "DataTransform/Repayment",
+        "IsHtml": "False",
+        "Desc": "商户控制台还款数据传输"
+      },
+      {
+        "Name": "CloseAccount",
+        "ActionUrl": "p_CloseAccount",
+        "IsHtml": "True",
+        "Desc": "销户"
+      }
+    ]
+  }
+}

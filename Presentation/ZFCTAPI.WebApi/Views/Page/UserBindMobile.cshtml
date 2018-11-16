@@ -1,0 +1,30 @@
+﻿@model ZFCTAPI.Data.BoHai.ReturnModels.RBHBindMobileNoBody
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserBindMobile</title>
+</head>
+<body  onload="document.BindMobileNo.submit()">
+    <form name="BindMobileNo" method="post" action="http://221.239.93.141:9080/bhdep/hipos/payTransaction" accept-charset="GBK">
+        <input name="char_set" type="hidden" value="@(Model.char_set)">
+        <input name="partner_id" type="hidden" value="@(Model.partner_id)">
+        <input name="version_no" type="hidden" value="@(Model.version_no)">
+        <input name="biz_type" type="hidden" value="@(Model.biz_type)">
+        <input name="sign_type" type="hidden" value="@(Model.sign_type)">
+        <input name="MerBillNo" type="hidden" value="@(Model.MerBillNo)">
+        <input name="PlaCustId" type="hidden" value="@(Model.PlaCustId)">
+        <input name="MobileNo" type="hidden" value="@(Model.MobileNo)">
+        <input name="PageReturnUrl" type="hidden" value="@(Model.PageReturnUrl)">
+        <input name="BgRetUrl" type="hidden" value="@(Model.BgRetUrl)">
+        <input name="MerPriv" type="hidden" value="@(Model.MerPriv)">
+        <input name="TransTyp" type="hidden" value="@(Model.TransTyp)">
+        <input name="mac" type="hidden" value="@(Model.mac)">
+    </form>
+</body>
+</html>

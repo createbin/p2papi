@@ -1,0 +1,118 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>充值返回</title>
+</head>
+<body>
+    <input type="hidden" id="mobile" value="@(ViewBag.Mobile)" />
+    <input type="hidden" id="type" value="@(ViewBag.ReturnType)" />
+    <input type="hidden" id="msg" value="@(ViewBag.Msg)" />
+    <script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/layer/layer.js"></script>
+<script>
+    var mobile = $('#mobile').val();
+    var type = $('#type').val();
+    var msg = $('#msg').val();
+    if (mobile == 1) {
+        switch (type) {
+        case "1":
+            IosAlert("testapp:openAccount");
+            break;
+        case "2":
+            IosAlert("testapp:bindCard");
+            break;
+        case "3":
+                IosAlert("testapp:recharge");
+            break;
+        case "4":
+            IosAlert("testapp:withdraw");
+                break;
+        case "5":
+                IosAlert("testapp:bindMobileNo");
+                break;
+        case "6":
+                IosAlert("testapp:bindPass");
+                break;
+        case "7":
+                IosAlert("testapp:autoAuth");
+                break;
+        case "8":
+                IosAlert("testapp:rechargeFailed" + "|" + msg);
+            break;
+        case "9":
+                IosAlert("testapp:withdrawFailed" + "|" + msg);
+            break;
+        default:
+        }
+    } else {
+        switch (type) {
+        case "1":
+            AndroidAlert("openAccount");
+            break;
+        case "2":
+            AndroidAlert("bindCard");
+            break;
+        case "3":
+                AndroidAlert("recharge");
+            break;
+            case "4":
+                AndroidAlert("withdraw");
+                break;
+        case "5":
+                AndroidAlert("bindMobileNo");
+            break;
+        case "6":
+                AndroidAlert("bindPass");
+            break;
+        case "7":
+                AndroidAlert("autoAuth");
+                break;
+        case "8":
+                AndroidAlert("rechargeFailed"+"-"+msg);
+            break;
+        case "9":
+                AndroidAlert("withdrawFailed" + "-" + msg);
+            break;
+        default:
+        }
+    }
+
+    function IosAlert(appPage) {
+        layer.alert(msg,
+            {
+                icon: 8,
+                end: function () {
+                    var url = appPage;
+                    document.location = url;
+                }
+            },
+            function () {
+                var url = appPage;
+                document.location = url;
+            });
+    }
+
+    function AndroidAlert(appPage) {
+        layer.alert(msg,
+            {
+                icon: 8,
+                end: function () {
+                    android.showToast(appPage);
+                }
+            },
+            function () {
+                android.showToast(appPage);
+            });
+    }
+</script>
+</body>
+
+
+</html>

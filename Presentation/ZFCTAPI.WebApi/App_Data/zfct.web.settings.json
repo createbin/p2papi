@@ -1,0 +1,80 @@
+﻿{
+  "ZfctWeb": {
+    "Name": "中房创投",
+    "Desc": "url配置文件",
+    "Code": "ZFCTWeb",
+    "LocalUrl": "http://218.94.124.235:8090/", //本机地址
+    "IPAddress": "218.94.124.235",//本机IP地址
+    "PcUrl": "http://192.168.1.238:8076/", //PC 端地址
+    "WeChatUrl": "http://218.94.124.235:6018/", //微信端地址
+    "WebUrl": [
+      {
+        "Name": "OpenAccount",
+        "ReturnUrl": "/AsyncRecieve/RealNameWeb",
+        "PcReturnUrl": "/AsyncRecieve/WebRecharge",
+        "WeChatReturnUrl": "/AsyncRecieve/WebRecharge",
+        "NoticeUrl": "/AsyncRecieve/AsyncRealNameWeb"
+      },
+      {
+        "Name": "CloseAccount",
+        "ReturnUrl": "AsyncRecieve/CloseAccount",
+        "PcReturnUrl": "AsyncRecieve/WebRecharge",
+        "WeChatReturnUrl": "AsyncRecieve/WebRecharge",
+        "NoticeUrl": "AsyncRecieve/AysncCloseAccount"
+      },
+      {
+        "Name": "Drawings",
+        "ReturnUrl": "AsyncRecieve/Drawings",
+        "PcReturnUrl": "AsyncRecieve/WebRecharge",
+        "WeChatReturnUrl": "AsyncRecieve/WebRecharge",
+        "NoticeUrl": "AsyncRecieve/AysncDrawings"
+      },
+      {
+        "Name": "WebRecharge",
+        "ReturnUrl": "AsyncRecieve/WebRecharge",
+        "PcReturnUrl": "AsyncRecieve/WebRecharge",
+        "WeChatReturnUrl": "AsyncRecieve/WebRecharge",
+        "NoticeUrl": "AsyncRecieve/AysncWebRecharge"
+      },
+      {
+        "Name": "BindCardWeb",
+        "ReturnUrl": "AsyncRecieve/BindCardWeb",
+        "PcReturnUrl": "AsyncRecieve/BindCardWeb",
+        "WeChatReturnUrl": "AsyncRecieve/BindCardWeb",
+        "NoticeUrl": "AsyncRecieve/AysncBindCardWeb"
+      },
+      {
+        "Name": "BindMobileNo",
+        "ReturnUrl": "AsyncRecieve/BindMobileNo",
+        "PcReturnUrl": "AsyncRecieve/BindMobileNo",
+        "WeChatReturnUrl": "AsyncRecieve/BindMobileNo",
+        "NoticeUrl": "AsyncRecieve/AsyncBindMobileNo"
+      },
+      {
+        "Name": "UserBindPass",
+        "ReturnUrl": "AsyncRecieve/UserBindPass",
+        "PcReturnUrl": "AsyncRecieve/UserBindPass",
+        "WeChatReturnUrl": "AsyncRecieve/UserBindPass",
+        "NoticeUrl": "AsyncRecieve/AsyncUserBindPass"
+      },
+      {
+        "Name": "SubmitCreditProjectResult",
+        "NoticeUrl": "AsyncRecieve/AsyncSubmitCreditProjectResult"
+      },
+      {
+        "Name": "OpenCompanyAccount",
+        "ReturnUrl": "AsyncRecieve/OpenChargeAccount",
+        "PcReturnUrl": "AsyncRecieve/OpenChargeAccount",
+        "WeChatReturnUrl": "AsyncRecieve/OpenChargeAccount",
+        "NoticeUrl": "AsyncRecieve/AsyncOpenChargeAccount"
+      },
+      {
+        "Name": "AutoInvestAuth",
+        "ReturnUrl": "AsyncRecieve/AutoAuth",
+        "PcReturnUrl": "AsyncRecieve/AutoAuth",
+        "WeChatReturnUrl": "AsyncRecieve/AutoAuth",
+        "NoticeUrl": "AsyncRecieve/AsyncAutoAuth"
+      }
+    ]
+  }
+}
